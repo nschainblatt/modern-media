@@ -1,9 +1,9 @@
 ## Modern Media
 
 A new social media platform in the making.
-> Account creation
-> Post an image with a title, caption and save to a users profile
-> Feed contains posts from users you follow
+- Account creation
+- Post an image with a title, caption and save to a users profile
+- Feed contains posts from users you follow
 
 ## Available Scripts
 
