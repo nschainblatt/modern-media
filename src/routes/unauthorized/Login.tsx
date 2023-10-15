@@ -8,7 +8,7 @@ const Login = () => {
           id="sidebar"
           className="flex flex-col justify-start gap-12 bg-red-800 rounded-lg py-4 px-8 shadow-2xl m-h-[30rem] w-[30rem]"
         >
-                    <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2">
             <h1 className="text-3xl text-center">Modern Media</h1>
             <h3 className="text-lg text-center">The modern way of sharing</h3>
           </div>
