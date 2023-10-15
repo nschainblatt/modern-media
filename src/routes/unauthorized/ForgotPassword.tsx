@@ -18,7 +18,7 @@ const ForgotPassword = () => {
               <input 
                 id="email"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717]"
+                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
               />
             </div>
             <a

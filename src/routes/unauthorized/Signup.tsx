@@ -18,7 +18,7 @@ const Signup = () => {
               <input 
                 id="name"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717]"
+                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
               />
             </div>
             <div className="flex flex-col gap-1">
@@ -26,7 +26,7 @@ const Signup = () => {
               <input 
                 id="email"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717]"
+                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
               />
             </div>
             <div className="flex flex-col gap-1">
@@ -34,7 +34,7 @@ const Signup = () => {
               <input 
                 id="password"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717]"
+                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
               />
             </div>
             <a

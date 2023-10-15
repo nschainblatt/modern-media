@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <>
       <div className="flex m-0 justify-center items-center min-h-screen">
-        <div 
+        <div
           id="sidebar"
           className="flex flex-col justify-start gap-12 bg-red-800 rounded-lg py-4 px-8 shadow-2xl m-h-[30rem] w-[30rem]"
         >
@@ -15,18 +15,18 @@ const Login = () => {
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-1">
               <label htmlFor="email">Email</label>
-              <input 
+              <input
                 id="email"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717]"
+                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
               />
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="password">Password</label>
-              <input 
+              <input
                 id="password"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717]"
+                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
               />
             </div>
             <a

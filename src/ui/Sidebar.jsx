@@ -14,51 +14,51 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="inline-flex flex-col justify-start gap-6 min-h-[100vh] bg-red-950 py-5 px-3">
+      <div className="fixed inline-flex flex-col justify-start gap-6 min-h-[100vh] bg-red-950 py-5 px-3">
         <a 
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Home')}
           onMouseLeave={() => changeIconText('')}
           href={'/home'}
         >
             <HouseIcon sx={{ fontSize: 40 }} />
-            <span className="absolute">{iconText === 'Home' ? iconText : ''}</span>
+            <span className="absolute ml-12">{iconText === 'Home' ? iconText : ''}</span>
         </a>
         <a 
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Post')}
           onMouseLeave={() => changeIconText('')}
           href={'/post'}
         >
             <AddToPhotosIcon sx={{ fontSize: 40 }} />
-            <span className="absolute">{iconText === 'Post' ? iconText : ''}</span>
+            <span className="absolute ml-12">{iconText === 'Post' ? iconText : ''}</span>
         </a>
         <a 
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Profile')}
           onMouseLeave={() => changeIconText('')}
           href={'/profile'}
         >
             <Person2Icon sx={{ fontSize: 40 }} />
-            <span className="absolute">{iconText === 'Profile' ? iconText : ''}</span>
+            <span className="absolute ml-12">{iconText === 'Profile' ? iconText : ''}</span>
         </a>
         <a 
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Settings')}
           onMouseLeave={() => changeIconText('')}
           href={'/settings'}
         >
             <SettingsIcon sx={{ fontSize: 40 }} />
-            <span className="absolute">{iconText === 'Settings' ? iconText : ''}</span>
+            <span className="absolute ml-12">{iconText === 'Settings' ? iconText : ''}</span>
         </a>
         <a 
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Logout')}
           onMouseLeave={() => changeIconText('')}
           href={'/'}
         >
             <LogoutIcon sx={{ fontSize: 40 }} />
-            <span className="absolute">{iconText === 'Logout' ? iconText : ''}</span>
+            <span className="absolute ml-12">{iconText === 'Logout' ? iconText : ''}</span>
         </a>
       </div>
     </>
