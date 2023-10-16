@@ -6,7 +6,7 @@ const Login = () => {
       <div className="flex m-0 justify-center items-center min-h-screen">
         <div
           id="sidebar"
-          className="flex flex-col justify-start gap-12 bg-red-800 rounded-lg py-4 px-8 shadow-2xl m-h-[30rem] w-[30rem]"
+          className="flex flex-col justify-start gap-12 bg-red-950 rounded-lg py-4 px-8 shadow-2xl m-h-[30rem] w-[30rem]"
         >
           <div className="flex flex-col gap-2">
             <h1 className="text-3xl text-center">Modern Media</h1>
@@ -18,7 +18,7 @@ const Login = () => {
               <input
                 id="email"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
+                className="rounded p-3 bg-stone-200 focus:bg-stone-500 outline-none"
               />
             </div>
             <div className="flex flex-col gap-1">
@@ -26,12 +26,12 @@ const Login = () => {
               <input
                 id="password"
                 type="text"
-                className="rounded p-3 bg-red-950 focus:bg-[#171717] outline-none"
+                className="rounded p-3 bg-stone-200 focus:bg-stone-500 outline-none"
               />
             </div>
             <a
               href={`/home`}
-              className="bg-red-950 hover:bg-[#171717] text-white font-bold py-2 px-4 rounded-lg text-center"
+              className="bg-stone-200 hover:bg-stone-500 text-[#171717] font-bold py-2 px-4 rounded-lg text-center"
             >
               Login
             </a>

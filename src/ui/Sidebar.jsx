@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="fixed inline-flex flex-col justify-start gap-6 min-h-[100vh] bg-red-950 py-5 px-3">
+      <div className="fixed inline-flex flex-col justify-start gap-6 min-h-[100vh] bg-red-950 py-5 px-3 z-[1001]">
         <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Home')}
