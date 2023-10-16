@@ -1,9 +1,10 @@
 ## Modern Media
 
-A new social media platform in the making.
+A social media platform for gym goers in the making.
 - Account creation
 - Post an image with a title, caption and save to a users profile
 - Feed contains posts from users you follow
+- Profile customization
 
 ## Available Scripts
 
