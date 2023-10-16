@@ -1,9 +1,6 @@
-import Sidebar from "../../ui/Sidebar";
-
 const Profile = () => {
   return (
     <>
-        <Sidebar />
     </>
   );
 };

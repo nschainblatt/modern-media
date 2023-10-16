@@ -1,47 +1,52 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromChildren, Route, RouterProvider } from 'react-router-dom';
 import Login from './routes/unauthorized/Login';
 import ForgotPassword from './routes/unauthorized/ForgotPassword';
 import Signup from './routes/unauthorized/Signup';
 import Home from './routes/authorized/Home';
 import ResetPassword from './routes/unauthorized/ResetPassword';
 import Post from './routes/authorized/Post';
-import Profile from "./routes/authorized/Post";
-import Settings from "./routes/authorized/Settings";
+import Profile from './routes/authorized/Profile';
+import Settings from './routes/authorized/Settings';
+import Sidebar from './ui/Sidebar';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />
-  },
-  {
-    path: '/signup',
-    element: <Signup />
-  },
-  {
-    path: '/forgotpassword',
-    element: <ForgotPassword />
-  },
-  {
-    path: '/resetpassword',
-    element: <ResetPassword />
-  },
-  {
-    path: '/home',
-    element: <Home />
-  },
-  {
-    path: '/post',
-    element: <Post />
-  },
-  {
-    path: '/profile',
-    element: <Profile />
-  },
-  {
-    path: '/settings',
-    element: <Settings />
-  }
-]);
+const router = createBrowserRouter(createRoutesFromChildren(
+  <>
+    <Route
+      path="/"
+      element={<Login />}
+    />
+    <Route
+      path="/signup"
+      element={<Signup />}
+    />
+    <Route
+      path="/forgotpassword"
+      element={<ForgotPassword />}
+    />
+    <Route
+      path="/resetpassword"
+      element={<ResetPassword />}
+    />
+    <Route element={<Sidebar />}>
+      <Route
+        path="/home"
+        element={<Home />}
+      />
+      <Route
+        path="/post"
+        element={<Post />}
+      />
+      <Route
+        path="/profile"
+        element={<Profile />}
+      />
+      <Route
+        path="/settings"
+        element={<Settings />}
+      />
+    </Route>
+  </>
+));
 
 const App = () => {
 

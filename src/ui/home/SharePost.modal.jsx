@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 const SharePost = ({ isShown, setIsShown }) => {
 
@@ -7,6 +8,20 @@ const SharePost = ({ isShown, setIsShown }) => {
       document.body.style.overflow = "hidden";
     }
   }, [isShown]);
+  
+  const sharePost = () => {
+    const templateParams = {
+      from_name: 'Jason',
+      message: 'Check this out!'
+    };
+
+    emailjs.send("service_ans5h76", "template_miykvtn", templateParams, "91VwoWOTwWorzt825")
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+    }, (error) => {
+      console.log('FAILED...', error);
+   });
+  };
 
   return (
     <>
@@ -35,7 +50,12 @@ const SharePost = ({ isShown, setIsShown }) => {
             />
           </div>
           <hr />
-          <button className="bg-red-950 hover:bg-[#270A0A] text-white font-bold py-2 px-4 rounded-lg text-center">Send</button>
+          <button
+            className="bg-red-950 hover:bg-[#270A0A] text-white font-bold py-2 px-4 rounded-lg text-center"
+            onClick={sharePost}
+          >
+            Send
+          </button>
       </div>
     </>
   );

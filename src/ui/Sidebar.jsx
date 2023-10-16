@@ -4,6 +4,8 @@ import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
 import HouseIcon from '@mui/icons-material/House';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   const [iconText, setIconText] = useState('');
@@ -15,52 +17,53 @@ const Sidebar = () => {
   return (
     <>
       <div className="fixed inline-flex flex-col justify-start gap-6 min-h-[100vh] bg-red-950 py-5 px-3">
-        <a 
+        <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Home')}
           onMouseLeave={() => changeIconText('')}
-          href={'/home'}
+          to={'/home'}
         >
             <HouseIcon sx={{ fontSize: 40 }} />
             <span className="absolute ml-12">{iconText === 'Home' ? iconText : ''}</span>
-        </a>
-        <a 
+        </NavLink>
+        <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Post')}
           onMouseLeave={() => changeIconText('')}
-          href={'/post'}
+          to={'/post'}
         >
             <AddToPhotosIcon sx={{ fontSize: 40 }} />
             <span className="absolute ml-12">{iconText === 'Post' ? iconText : ''}</span>
-        </a>
-        <a 
+        </NavLink>
+        <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Profile')}
           onMouseLeave={() => changeIconText('')}
-          href={'/profile'}
+          to={'/profile'}
         >
             <Person2Icon sx={{ fontSize: 40 }} />
             <span className="absolute ml-12">{iconText === 'Profile' ? iconText : ''}</span>
-        </a>
-        <a 
+        </NavLink>
+        <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Settings')}
           onMouseLeave={() => changeIconText('')}
-          href={'/settings'}
+          to={'/settings'}
         >
             <SettingsIcon sx={{ fontSize: 40 }} />
             <span className="absolute ml-12">{iconText === 'Settings' ? iconText : ''}</span>
-        </a>
-        <a 
+        </NavLink>
+        <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Logout')}
           onMouseLeave={() => changeIconText('')}
-          href={'/'}
+          to={'/'}
         >
             <LogoutIcon sx={{ fontSize: 40 }} />
             <span className="absolute ml-12">{iconText === 'Logout' ? iconText : ''}</span>
-        </a>
+        </NavLink>
       </div>
+      <Outlet />
     </>
   );
 };
