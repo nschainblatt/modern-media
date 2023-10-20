@@ -1,15 +1,11 @@
 import Modal from "../../ui/Modal";
 import CollectionsIcon from '@mui/icons-material/Collections';
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 const Post = () => {
-  const [isShown, setIsShown] = useState(false);
+  const [isShown, setIsShown] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
-
-  useEffect(() => {
-    setIsShown(true);
-  }, []);
 
   return (
     <>
