@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSpringValue, animated } from '@react-spring/web';
 import { createPortal } from "react-dom";
 
-const Modal = ({ show, children, onHide, header, maxWidth='20rem', animation=true }) => {
+const Modal = ({ show=false, children, onHide=()=>{}, header, maxWidth='20rem', animation=true }) => {
   const [isShown, setIsShown] = useState(show);
   const opacity = useSpringValue(isShown ? 1 : 0);
   const zIndex = useSpringValue(isShown ? 1000 : -1);
@@ -18,7 +18,7 @@ const Modal = ({ show, children, onHide, header, maxWidth='20rem', animation=tru
         onHide();
         }
     })();
-  }, [isShown, onHide, opacity, zIndex]);
+  }, [isShown]);
 
   useEffect(() => {
     setIsShown(show);
@@ -43,7 +43,7 @@ const Modal = ({ show, children, onHide, header, maxWidth='20rem', animation=tru
       : <></>
     }
       <div
-        className="bg-red-950 p-4 rounded-lg text-white min-w-[30rem] min-h-[30rem] w-full flex-grow relative z-20 overflow-y-auto flex flex-col gap-20"
+        className="bg-red-950 p-4 rounded-sm min-w-[20rem] w-full flex-grow relative z-20 overflow-y-auto"
         style={{
           maxWidth,
           maxHeight: '80vh'

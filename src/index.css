@@ -40,6 +40,24 @@
   background-color: red;
 } */
 
+/* All ScrollBars */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(27 32 40);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

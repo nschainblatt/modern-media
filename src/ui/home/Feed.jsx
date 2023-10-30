@@ -16,7 +16,7 @@ const users = [
 const Feed = () => {
   return (
     <>
-        <div className="flex flex-col gap-10 py-5 px-40 text-center">
+        <div className="flex flex-col gap-10 py-5 px-8 text-center w-full items-center lg:m-auto sm:mt-20">
             <h1 className="text-4xl">Your Feed</h1>
             <IndividualPost
                 user={users[0]}
@@ -24,28 +24,24 @@ const Feed = () => {
                 caption={'Here in Ohio'}
                 image={pic1}
             />
-            <hr />
             <IndividualPost
                 user={users[1]}
                 title={'Mountain Tops'}
                 caption={'What a sight to see at sunset!'}
                 image={pic2}
             />
-            <hr />
             <IndividualPost
                 user={users[2]}
                 title={'Mood'}
                 caption={'My mood right now'}
                 image={pic3}
             />
-            <hr />
             <IndividualPost
                 user={users[3]}
                 title={'Happy Hour'}
                 caption={'Me on my way to happy hour'}
                 image={pic4}
             />
-            <hr />
             <IndividualPost
                 user={users[4]}
                 title={'Devlivery'}

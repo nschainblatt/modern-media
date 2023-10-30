@@ -16,7 +16,10 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="fixed inline-flex flex-col justify-start gap-6 min-h-[100vh] bg-red-950 py-5 px-3 z-[1001]">
+      <div className="fixed inline-flex 
+                      lg:flex-col sm:flex-row lg:min-h-[100vh] lg:min-w-[auto] sm:min-w-[100%]
+                      lg:justify-start sm:justify-center gap-6 bg-red-950 py-5 px-3 z-[1001]"
+      >
         <NavLink 
           className="hover:cursor-pointer flex items-center"
           onMouseEnter={() => changeIconText('Home')}
@@ -24,7 +27,7 @@ const Sidebar = () => {
           to={'/home'}
         >
             <HouseIcon sx={{ fontSize: 40 }} />
-            <span className="absolute ml-12">{iconText === 'Home' ? iconText : ''}</span>
+            <span className="absolute ml-12 lg:block sm:hidden">{iconText === 'Home' ? iconText : ''}</span>
         </NavLink>
         <NavLink 
           className="hover:cursor-pointer flex items-center"
@@ -33,7 +36,7 @@ const Sidebar = () => {
           to={'/post'}
         >
             <AddToPhotosIcon sx={{ fontSize: 40 }} />
-            <span className="absolute ml-12">{iconText === 'Post' ? iconText : ''}</span>
+            <span className="absolute ml-12 lg:block sm:hidden">{iconText === 'Post' ? iconText : ''}</span>
         </NavLink>
         <NavLink 
           className="hover:cursor-pointer flex items-center"
@@ -42,7 +45,7 @@ const Sidebar = () => {
           to={'/profile'}
         >
             <Person2Icon sx={{ fontSize: 40 }} />
-            <span className="absolute ml-12">{iconText === 'Profile' ? iconText : ''}</span>
+            <span className="absolute ml-12 lg:block sm:hidden">{iconText === 'Profile' ? iconText : ''}</span>
         </NavLink>
         <NavLink 
           className="hover:cursor-pointer flex items-center"
@@ -51,7 +54,7 @@ const Sidebar = () => {
           to={'/settings'}
         >
             <SettingsIcon sx={{ fontSize: 40 }} />
-            <span className="absolute ml-12">{iconText === 'Settings' ? iconText : ''}</span>
+            <span className="absolute ml-12 lg:block sm:hidden">{iconText === 'Settings' ? iconText : ''}</span>
         </NavLink>
         <NavLink 
           className="hover:cursor-pointer flex items-center"
@@ -60,7 +63,7 @@ const Sidebar = () => {
           to={'/'}
         >
             <LogoutIcon sx={{ fontSize: 40 }} />
-            <span className="absolute ml-12">{iconText === 'Logout' ? iconText : ''}</span>
+            <span className="absolute ml-12 lg:block sm:hidden">{iconText === 'Logout' ? iconText : ''}</span>
         </NavLink>
       </div>
       <Outlet />

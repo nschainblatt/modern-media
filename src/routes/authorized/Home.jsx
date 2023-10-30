@@ -3,11 +3,9 @@ import Feed from "../../ui/home/Feed";
 const Home = () => {
   return (
     <>
-        <div className="flex">
-          <div className="w-full flex flex-col text-center justify-center align-middle items-center">
-            <Feed />
-          </div>
-        </div>
+      <div className="w-full flex flex-col text-center justify-center align-middle items-center">
+        <Feed />
+      </div>
     </>
   );
 };

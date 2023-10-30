@@ -1,24 +1,31 @@
 import React from "react";
+import Modal from "../../ui/Modal";
 
 const Login = () => {
   return (
     <>
-      <div className="flex m-0 justify-center items-center min-h-screen">
-        <div
-          id="sidebar"
-          className="flex flex-col justify-start gap-12 bg-red-950 rounded-lg py-4 px-8 shadow-2xl m-h-[30rem] w-[30rem]"
-        >
-          <div className="flex flex-col gap-2">
-            <h1 className="text-3xl text-center">Modern Media</h1>
-            <h3 className="text-lg text-center">The modern way of sharing</h3>
-          </div>
+      <Modal
+        animation={false}
+        header={
+            <div className="text-xl flex flex-col gap-2 w-full text-center">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-3xl text-center">Modern Media</h1>
+                <h3 className="text-lg text-center">The modern way of sharing</h3>
+              </div>
+              <hr />
+            </div>
+          }
+        show={true}
+        maxWidth="25vw"
+      >
+        <div className="p-4">
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-1">
               <label htmlFor="email">Email</label>
               <input
                 id="email"
                 type="text"
-                className="rounded p-3 bg-stone-200 focus:bg-stone-500 outline-none"
+                className="rounded-sm p-3 bg-stone-200 focus:bg-stone-400 text-[#171717] outline-none"
               />
             </div>
             <div className="flex flex-col gap-1">
@@ -26,22 +33,24 @@ const Login = () => {
               <input
                 id="password"
                 type="text"
-                className="rounded p-3 bg-stone-200 focus:bg-stone-500 outline-none"
+                className="rounded-sm p-3 bg-stone-200 focus:bg-stone-400 text-[#171717] outline-none"
               />
             </div>
-            <a
-              href={`/home`}
-              className="bg-stone-200 hover:bg-stone-500 text-[#171717] font-bold py-2 px-4 rounded-lg text-center"
-            >
-              Login
-            </a>
-          </div>
-          <div className="flex flex-col gap-5 items-center">
-              <a href={`/forgotpassword`}>Forgot Password</a>
-              <a href={`/signup`}>Don't have an account? <span>Sign Up</span></a>
+            <div className="flex justify-center">
+              <a
+                href={`/home`}
+                className="bg-stone-200 hover:bg-stone-400 text-[#171717] font-bold p-3 rounded-sm text-center px-14"
+              >
+                Login
+              </a>
             </div>
+          </div>
+          <div className="flex flex-col gap-5 items-center mt-5">
+            <a href={`/forgotpassword`}>Forgot Password</a>
+            <a href={`/signup`}>Don't have an account? <span>Sign Up</span></a>
+          </div>
         </div>
-      </div>
+      </Modal>
     </>
   );
 };

@@ -1,14 +1,11 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Modal from "../Modal";
+import SendIcon from '@mui/icons-material/Send';
 
-const SharePost = ({ isShown, setIsShown }) => {
+const SharePost = () => {
+  const [isShown, setIsShown] = useState(false);
 
-  useEffect(() => {
-    if (isShown) {
-      document.body.style.overflow = "hidden";
-    }
-  }, [isShown]);
-  
   const sharePost = () => {
     const templateParams = {
       from_name: 'Jason',
@@ -25,18 +22,31 @@ const SharePost = ({ isShown, setIsShown }) => {
 
   return (
     <>
-      <div 
-        className="fixed inset-0 min-w-[100vw] min-h-[100vh] bg-red-950 opacity-25" 
+      <button
+        className="hover:text-red-800"
         onClick={() => {
-            document.body.style.overflow = "auto";
-            setIsShown(false);
-          }
+          setIsShown(true);
+        }}
+      >
+        <SendIcon sx={{ fontSize: 30 }} />
+      </button>
+      <Modal
+        header={
+          <div className="text-xl flex flex-col gap-2 w-full text-center">
+            <div className="flex flex-col gap-2">
+              <h1 className="text-3xl text-center">Share</h1>
+            </div>
+            <hr />
+          </div>
         }
-      />
-      <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-1/3 h-1/3 bg-[#171717] rounded-xl flex flex-col gap-2 p-5">
-          <h1>Share</h1>
-          <hr />
-          <div className="flex gap-2">
+        show={isShown}
+        onHide={() => {
+          setIsShown(false);
+          }}
+        maxWidth="25vw"
+      >
+        <div className="flex flex-col gap-2 p-5">
+        <div className="flex flex-col gap-1">
             <label
               htmlFor="share"
               className="font-bold"
@@ -45,18 +55,18 @@ const SharePost = ({ isShown, setIsShown }) => {
             </label>
             <input 
               id="share"
-              className="bg-transparent outline-none"
+              className="rounded-sm p-3 bg-stone-200 focus:bg-stone-400 text-[#171717] outline-none"
               placeholder="example@gmail.com" 
             />
           </div>
-          <hr />
           <button
-            className="bg-red-950 hover:bg-[#270A0A] text-white font-bold py-2 px-4 rounded-lg text-center"
+            className="bg-stone-200 hover:bg-stone-400 text-[#171717] font-bold p-3 rounded-sm text-center"
             onClick={sharePost}
           >
             Send
           </button>
-      </div>
+        </div>
+      </Modal>
     </>
   );
 };
